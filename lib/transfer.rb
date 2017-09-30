@@ -28,9 +28,11 @@ class Transfer
   end
 
   def reverse_transfer
-    if @status == 
+    if @status == "complete"
+      new_transfer = Transfer.new(@receiver,@sender,@amount)
+    end
   end
 
-  
+
 
 end
