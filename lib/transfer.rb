@@ -19,7 +19,7 @@ class Transfer
 
   def execute_transaction
 
-    puts @sender.valid?
+    puts self.valid?
 
     if @sender.valid? && @status == "pending"
       @sender.balance -= @amount
