@@ -8,12 +8,17 @@ class Transfer
     @transfer_amount = transfer_amount
   end
 
-  def valid
+  def valid?
     if @sender.valid? && @receiver.valid?
       return true
     else
       return false
     end
   end
-  
+
+  def execute_transaction
+    @sender.balance -= @transfer_amount
+    @receiver.balance += @transfer_amount
+  end
+
 end
